@@ -5,10 +5,10 @@ using namespace std;
 
 int main(){
 	int yes;
-	int i = 0, j = 0, k = 575;
-	for(j = 0; j < 24; ++j){
+	int i = 0, j = 0, k = 256;
+	for(j = 0; j < 16; ++j){
 		printf("//Row %i\n", j + 1);
-		for(i = 0; i < 24; ++i){
+		for(i = 0; i < 16; ++i){
 			printf("if((cy >= START+SEGMENT*%i) && (cy <= START+SEGMENT*%i-SKIP) && (cx >= START+SEGMENT*%i) && (cx <= START+SEGMENT*%i-SKIP))\n", j, j + 1, i, i + 1);
 			printf("\tif (n2[%i] == 1'b0)\n", k);
 			printf("\t\tDataIn <= dead;\n");
@@ -26,7 +26,7 @@ int main(){
 		printf("\n");
 		
 		printf("// Skip Row\n");
-		for(i = 0; i < 24; ++i){
+		for(i = 0; i < 16; ++i){
 			printf("if((cy >= START+SEGMENT*%i) && (cy <= START+SEGMENT*%i-SKIP) && (cx >= START+SEGMENT*%i-SKIP) && (cx <= START+SEGMENT*%i))\n", j, j + 1, i + 1, i + 1);
 			printf("\tDataIn <= {8'h00, 8'h00, 8'h00};\n");
 		}
@@ -38,7 +38,7 @@ int main(){
 		printf("\n");
 	}
 	printf("//Skip\n");
-	printf("if (cy >= START+SEGMENT*%i-SKIP)\n", j + 1);
+	printf("if (cy >= START+SEGMENT*%i-SKIP)\n", j);
 	printf("\tDataIn <= {8'h00, 8'h00, 8'h00};\n");
 	printf("\n");
 	cin >> yes;
