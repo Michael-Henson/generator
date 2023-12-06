@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 	int yes;
-	int i = 0, j = 0, k = 256;
+	int i = 0, j = 0, k = 255;
 	for(j = 0; j < 16; ++j){
 		printf("//Row %i\n", j + 1);
 		for(i = 0; i < 16; ++i){
