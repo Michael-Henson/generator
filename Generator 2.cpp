@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(){
+	int yes;
 	int i = 0, j = 0, k = 575;
 	for(j = 0; j < 24; ++j){
 		printf("//Row %i\n", j + 1);
@@ -40,4 +41,5 @@ int main(){
 	printf("if (cy >= START+SEGMENT*%i-SKIP)\n", j + 1);
 	printf("\tDataIn <= {8'h00, 8'h00, 8'h00);\n");
 	printf("\n");
+	cin >> yes;
 }
