@@ -18,10 +18,12 @@ int main(){
 			
 			--k;
 		}
+		printf("\n");
+		
 		printf("// Begining/End of Row\n");
 		printf("if ((cy >= START+SEGMENT*%i) && (cy <= START+SEGMENT*%i-SKIP) && (cx < START))\n", j, j + 1);
 		printf("\tDataIn <= {8'h00, 8'h00, 8'h00};\n");
-		printf("if ((cy >= START+SEGMENT*%i) && (cy <= START+SEGMENT*%i-SKIP) && (cx < START+SEGMENT*24))\n", j, j + 1);
+		printf("if ((cy >= START+SEGMENT*%i) && (cy <= START+SEGMENT*%i-SKIP) && (cx > START+SEGMENT*16))\n", j, j + 1);
 		printf("\tDataIn <= {8'h00, 8'h00, 8'h00};\n");
 		printf("\n");
 		
